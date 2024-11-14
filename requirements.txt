@@ -1,0 +1,8 @@
+
+tiktoken
+torch>=2.0
+uvicorn~=0.24.0
+fastapi>=0.104.1
+loguru~=0.7.2
+sentence_transformers
+OpenAI

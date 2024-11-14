@@ -1,0 +1,20 @@
+services:
+  ChatGLM3:
+    image: imaiguo/bgelargezh:v1.0
+    container_name: BGELargeZH
+    # restart: always
+    command: 'python api_server.py'
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            device_ids: ['0']
+            capabilities: [gpu]
+    environment:
+      TZ: 'Asia/Shanghai'
+      LANG: 'C.UTF-8'
+    ports:
+      - '8000:8000'
+    volumes:
+      - '/opt/Data/ModelWeight/embedding/BAAI/bge-large-zh-v1.5:/opt/Data/ModelWeight/embedding/BAAI/bge-large-zh-v1.5'
