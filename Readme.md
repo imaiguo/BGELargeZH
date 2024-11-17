@@ -19,3 +19,28 @@
 > python src/ApiServer.py
 >
 ```
+
+## 4 docker镜像制作
+
+```bash
+> sudo docker build -t imaiguo/bgelargezh:1.5 .
+```
+
+## 5 修改docker镜像源
+
+进入daemon.json（如果没有手动创建）
+
+```bash
+> sudo vim /etc/docker/daemon.json
+> #添加
+{
+    "registry-mirrors": [
+        "https://docker.m.daocloud.io",
+        "https://docker.1panel.live"
+    ]
+}
+>
+> #查看docker 镜像信息
+> docker info
+```
+

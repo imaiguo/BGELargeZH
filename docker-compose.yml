@@ -1,9 +1,9 @@
 services:
-  ChatGLM3:
-    image: imaiguo/bgelargezh:v1.0
+  BAAIEmbeddingServer:
+    image: imaiguo/bgelargezh:1.5
     container_name: BGELargeZH
     # restart: always
-    command: 'python api_server.py'
+    command: 'python ApiServer.py'
     deploy:
       resources:
         reservations:
@@ -18,3 +18,4 @@ services:
       - '8000:8000'
     volumes:
       - '/opt/Data/ModelWeight/embedding/BAAI/bge-large-zh-v1.5:/opt/Data/ModelWeight/embedding/BAAI/bge-large-zh-v1.5'
+      - '/opt/WorkSpace/BGELargeZH/src:/opt/openai'

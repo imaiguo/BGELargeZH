@@ -1,9 +1,8 @@
 
+import Config
 from openai import OpenAI
 
-OPENAI_SERVER = "127.0.0.1"
-OPENAI_PORT = 10000
-BaseUrl=f"http://{OPENAI_SERVER}:{OPENAI_PORT}/v1"
+BaseUrl=f"http://{Config.EbeddingServerIP}:{Config.EbeddingServerPort}/v1"
 
 def GetEmbedding(msglist:list):
     print(BaseUrl)
