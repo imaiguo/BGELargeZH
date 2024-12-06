@@ -2,7 +2,7 @@ services:
   BAAIEmbeddingServer:
     image: imaiguo/bgelargezh:1.5
     container_name: BGELargeZH
-    # restart: always
+    restart: always
     command: 'python ApiServer.py'
     deploy:
       resources:
