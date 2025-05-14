@@ -4,13 +4,13 @@ services:
     container_name: BGELargeZH
     restart: always
     command: 'python ApiServer.py'
-    deploy:
-      resources:
-        reservations:
-          devices:
-          - driver: nvidia
-            device_ids: ['0']
-            capabilities: [gpu]
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #       - driver: nvidia
+    #         device_ids: ['0']
+    #         capabilities: [gpu]
     environment:
       TZ: 'Asia/Shanghai'
       LANG: 'C.UTF-8'
@@ -18,4 +18,4 @@ services:
       - '8000:8000'
     volumes:
       - '/opt/Data/ModelWeight/embedding/BAAI/bge-large-zh-v1.5:/opt/Data/ModelWeight/embedding/BAAI/bge-large-zh-v1.5'
-      - '/opt/WorkSpace/BGELargeZH/src:/opt/openai'
+      - './src:/opt/openai'
