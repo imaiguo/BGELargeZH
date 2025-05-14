@@ -17,5 +17,10 @@ services:
     ports:
       - '8000:8000'
     volumes:
-      - '/opt/Data/ModelWeight/embedding/BAAI/bge-large-zh-v1.5:/opt/Data/ModelWeight/embedding/BAAI/bge-large-zh-v1.5'
+      - '/opt/Data/ModelWeight/BAAI/bge-large-zh-v1.5:/opt/Data/ModelWeight/embedding/BAAI/bge-large-zh-v1.5'
       - './src:/opt/openai'
+    healthcheck:
+      test: curl -f http://localhost:8000/health
+      interval: 30s
+      timeout: 10s
+      retries: 3

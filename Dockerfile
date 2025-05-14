@@ -12,4 +12,6 @@ COPY requirements.txt /opt/openai
 
 RUN python -m pip install -r requirements.txt
 
+RUN apt update && apt install -y curl
+
 EXPOSE 8000 8000

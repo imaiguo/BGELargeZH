@@ -44,3 +44,10 @@
 > docker info
 ```
 
+# 6 镜像导出导入
+
+```
+> sudo docker save -o pytorch.cuda.2.3.0.tar pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
+> sudo docker load -i pytorch.cuda.2.3.0.tar
+>
+```
